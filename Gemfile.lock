@@ -64,6 +64,9 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    climate_control (0.2.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -106,6 +109,8 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    psql (0.0.1)
+      cocaine (= 0.5.1)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
@@ -213,6 +218,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  psql
   puma (~> 3.11)
   rails (~> 5.2.0)
   rspec
