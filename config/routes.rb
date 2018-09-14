@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/index'
   get 'sign_up/new'
   post 'sign_up/create'
   get 'welcome/index'

@@ -9,6 +9,7 @@ class SignUpController < ApplicationController
     @user.account = account
     if @user.save
       flash[:notice] = "User created successfully"
+      redirect_to user_index_url
     else
       flash.now.alert = "User failed to be created"
       # TODO: Refreshing the page after rendering causes an error
