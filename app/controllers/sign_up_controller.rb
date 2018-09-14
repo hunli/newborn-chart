@@ -9,6 +9,7 @@ class SignUpController < ApplicationController
     @user.account = account
     if @user.save
       flash[:notice] = "User created successfully"
+      session[:current_user_id] = @user.id
       redirect_to user_index_url
     else
       flash.now.alert = "User failed to be created"
