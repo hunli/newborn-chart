@@ -1,0 +1,2 @@
+class DiaperChange < ApplicationRecord
+end
