@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_231828) do
+ActiveRecord::Schema.define(version: 2018_09_14_020344) do
 
   create_table "accounts", force: :cascade do |t|
     t.text "token"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_231828) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_users_on_account_id"
   end
 
 end
