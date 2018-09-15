@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pump/new'
   get 'diaper_change/index'
   get 'feed/index'
   get 'login/index'

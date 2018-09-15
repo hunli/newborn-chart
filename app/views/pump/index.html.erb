@@ -1,2 +1,16 @@
-<h1>Pump#index</h1>
-<p>Find me in app/views/pump/index.html.erb</p>
+<h1>Pump</h1>
+
+<div class='center'>
+  <% @pumps.each do |p| %>
+    <fieldset>
+      <%= p.pump_time.strftime("%H:%M %p") %> -
+      <%= p.amount %> ounces
+    </fieldset>
+    <br><br>
+  <% end %>
+</div>
+
+<%= render partial: 'form' %>
+
+<br><br>
+<%= link_to 'Back', user_index_path %>

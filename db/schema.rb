@@ -10,12 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_175820) do
+ActiveRecord::Schema.define(version: 2018_09_14_235316) do
 
   create_table "accounts", force: :cascade do |t|
     t.text "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "diaper_changes", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "account_id"
+    t.time "change_time"
+    t.index ["account_id"], name: "index_diaper_changes_on_account_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "account_id"
+    t.time "feed_time"
+    t.index ["account_id"], name: "index_feeds_on_account_id"
+  end
+
+  create_table "pumps", force: :cascade do |t|
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "account_id"
+    t.time "pump_time"
+    t.index ["account_id"], name: "index_pumps_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|
