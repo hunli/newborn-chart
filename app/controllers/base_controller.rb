@@ -2,8 +2,7 @@ class BaseController < ApplicationController
   before_action :verify_user_signed_in
 
   def verify_user_signed_in
-    # TODO: Should actually redirect to a log in page when log in page is created
-    redirect_to welcome_index_path unless valid_session
+    redirect_to login_index_path unless valid_session
   end
 
   def current_user
