@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_235316) do
   end
 
   create_table "diaper_changes", force: :cascade do |t|
-    t.string "type"
+    t.string "diaper_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"

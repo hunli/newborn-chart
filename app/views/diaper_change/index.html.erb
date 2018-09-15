@@ -1,2 +1,17 @@
-<h1>DiaperChange#index</h1>
-<p>Find me in app/views/diaper_change/index.html.erb</p>
+<h1>Diaper Change</h1>
+
+<div class='center'>
+  <% @diaper_changes.each do |d| %>
+    <fieldset>
+      <%= d.change_time.strftime("%H:%M %p") %>
+      <br>
+      <%= d.diaper_type %>
+    </fieldset>
+    <br><br>
+  <% end %>
+</div>
+
+<%= render partial: 'form' %>
+
+<br><br>
+<%= link_to 'Back', user_index_path %>

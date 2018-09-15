@@ -10,5 +10,5 @@ test :
 precheck :
 		lint test
 
-heroku : test
+heroku : #test
 		git push heroku master
