@@ -1,6 +1,7 @@
 <div class='center'>
   <%= form_for @diaper_change, url: { action: 'create' } do |f| %>
     <%= f.label :change_time, 'Diaper Change Time:' %>
+    <br>
     <%= f.time_select :change_time, { ampm: true } %>
     <br>
     <%= f.label :diaper_type, 'Type of Diaper Change:' %>
