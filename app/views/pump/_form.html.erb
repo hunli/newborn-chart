@@ -1,7 +1,7 @@
 <div class='center'>
   <%= form_for @pump, url: { action: 'create' } do |f| %>
     <%= f.label :pump_time, 'Pump Time:' %>
-    <%= f.time_select :pump_time, { ampm: true }, value: Time.now %>
+    <%= f.time_select :pump_time, { ampm: true } %>
     <br>
     <%= f.label :amount, 'Amount:' %>
     <%= f.number_field :amount, step: :any %>
