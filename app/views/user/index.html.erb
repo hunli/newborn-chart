@@ -1,0 +1,12 @@
+<h1>Welcome <%= user_name %>!</h1>
+<br>
+
+<div class='center'>
+  <p>Account token: <%= @user.account.token %></p>
+  <br>
+  <%= link_to 'Pump', pump_index_path %>
+  <br><br>
+  <%= link_to 'Feed', feed_index_path %>
+  <br><br>
+  <%= link_to 'Diaper Change', diaper_change_index_path %>
+</div>

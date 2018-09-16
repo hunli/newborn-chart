@@ -1,0 +1,11 @@
+<div class='center'>
+  <%= form_for @feed, url: { action: 'create' } do |f| %>
+    <%= f.label :feed_time, 'Feed Time:' %>
+    <%= f.time_select :feed_time, { ampm: true } %>
+    <br>
+    <%= f.label :amount, 'Amount:' %>
+    <%= f.number_field :amount, step: :any %>
+    <br>
+    <%= f.submit 'Log'%>
+  <% end %>
+</div>

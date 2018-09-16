@@ -1,0 +1,16 @@
+<h1>Pump</h1>
+
+<div class='center'>
+  <% @pumps.each do |p| %>
+    <fieldset>
+      <%= p.pump_time.strftime("%H:%M %p") %> -
+      <%= p.amount %> ounces
+    </fieldset>
+    <br><br>
+  <% end %>
+
+  <%= render partial: 'form' %>
+
+  <br><br>
+  <%= link_to 'Back', user_index_path %>
+</div>

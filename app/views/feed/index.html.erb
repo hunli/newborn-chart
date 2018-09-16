@@ -1,0 +1,16 @@
+<h1>Feed</h1>
+
+<div class='center'>
+  <% @feeds.each do |f| %>
+    <fieldset>
+      <%= f.feed_time.strftime("%H:%M %p") %> -
+      <%= f.amount %> ounces
+    </fieldset>
+    <br><br>
+  <% end %>
+
+  <%= render partial: 'form' %>
+
+  <br><br>
+  <%= link_to 'Back', user_index_path %>
+</div>

@@ -1,0 +1,25 @@
+// Place all the styles related to the SignUp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+a {
+  border-radius: 5px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+a:link {
+  background-color: lightgreen;
+}
+
+a:hover {
+  background-color: lightblue;
+}
