@@ -3,7 +3,7 @@
 <div class='center'>
   <% @pumps.each do |p| %>
     <fieldset>
-      <%= p.pump_time.strftime("%H:%M %p") %> -
+      <%= p.pump_time %> -
       <%= p.amount %> ounces
     </fieldset>
     <br><br>

@@ -14,3 +14,18 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function TimeInputChange() {
+  let value = '';
+  var time = document.getElementById('time').value.replace(':', '');
+
+  if (time.length >= 4) {
+    value = time.substring(0, 2) + ':' + time.substring(2, 4);
+  } else if (time.length == 3) {
+    value = time.substring(0, 1) + ':' + time.substring(1, 3)
+  } else {
+    value = time;
+  }
+
+  document.getElementById('time').value = value;
+}

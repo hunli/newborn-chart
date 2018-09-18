@@ -1,7 +1,8 @@
 <div class='center'>
   <%= form_for @pump, url: { action: 'create' } do |f| %>
     <%= f.label :pump_time, 'Pump Time:' %>
-    <%= f.time_select :pump_time, { ampm: true } %>
+    <%= telephone_field_tag :pump_time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
+    <%= select_tag :cycle, options_for_select(['AM', 'PM'], 'PM') %>
     <br>
     <%= f.label :amount, 'Amount:' %>
     <%= f.number_field :amount, step: :any %>

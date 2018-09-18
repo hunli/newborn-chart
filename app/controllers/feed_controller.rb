@@ -5,7 +5,10 @@ class FeedController < BaseController
   end
 
   def create
-    current_user.account.feeds.create(feed_params)
+    current_user.account.feeds.build(feed_params).tap do |feed|
+      feed.feed_time = retrieve_feed_time
+      feed.save
+    end
     redirect_to feed_index_path
   end
 
@@ -13,5 +16,9 @@ class FeedController < BaseController
 
   def feed_params
     params.require(:feed).permit(:amount, :feed_time)
+  end
+
+  def retrieve_feed_time
+    params[:feed_time] + ' ' + params[:cycle]
   end
 end

@@ -5,13 +5,20 @@ class PumpController < BaseController
   end
 
   def create
-    current_user.account.pumps.create(pump_params)
+    current_user.account.pumps.build(pump_params).tap do |pump|
+      pump.pump_time = retrieve_pump_time
+      pump.save
+    end
     redirect_to pump_index_path
   end
 
   private
 
   def pump_params
-    params.require(:pump).permit(:amount, :pump_time)
+    params.require(:pump).permit(:amount)
+  end
+
+  def retrieve_pump_time
+    params[:pump_time] + ' ' + params[:cycle]
   end
 end

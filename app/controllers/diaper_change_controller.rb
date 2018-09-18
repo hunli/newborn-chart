@@ -5,15 +5,17 @@ class DiaperChangeController < BaseController
   end
 
   def create
-    diaper_change = current_user.account.diaper_changes.build(diaper_change_params)
-    diaper_change.diaper_type = params[:diaper_change][:diaper_type]&.join(', ') || "Nothing?"
-    diaper_change.save
+    current_user.account.diaper_changes.build.tap do |diaper_change|
+      diaper_change.diaper_type = params[:diaper_change] && params[:diaper_change][:diaper_type]&.join(', ') || "Nothing?"
+      diaper_change.change_time = retrieve_diaper_change_time
+      diaper_change.save
+    end
     redirect_to diaper_change_index_path
   end
 
   private
 
-  def diaper_change_params
-    params.require(:diaper_change).permit(:change_time)
+  def retrieve_diaper_change_time
+    params[:change_time] + ' ' + params[:cycle]
   end
 end

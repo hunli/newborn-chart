@@ -21,6 +21,10 @@
   width: auto;
 }
 
+.date_field {
+  width: 3em;
+}
+
 a {
   border-radius: 5px;
   padding: 14px;
