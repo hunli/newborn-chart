@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_235316) do
+ActiveRecord::Schema.define(version: 2018_09_18_085029) do
 
   create_table "accounts", force: :cascade do |t|
     t.text "token"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_235316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"
-    t.time "change_time"
+    t.string "change_time"
     t.index ["account_id"], name: "index_diaper_changes_on_account_id"
   end
 
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_235316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"
-    t.time "feed_time"
+    t.string "feed_time"
     t.index ["account_id"], name: "index_feeds_on_account_id"
   end
 
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_235316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"
-    t.time "pump_time"
+    t.string "pump_time"
     t.index ["account_id"], name: "index_pumps_on_account_id"
   end
 
