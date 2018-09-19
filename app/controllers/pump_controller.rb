@@ -19,6 +19,6 @@ class PumpController < BaseController
   end
 
   def retrieve_pump_time
-    params[:pump_time] + ' ' + params[:cycle]
+    params[:time] + ' ' + params[:cycle]
   end
 end
