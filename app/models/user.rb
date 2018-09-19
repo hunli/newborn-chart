@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_secure_password
 
   # Constants
-  LIMIT = 50
+  LIMIT = 20
 
   def pumps
     Pump.find(account.pump_ids.last(LIMIT))
