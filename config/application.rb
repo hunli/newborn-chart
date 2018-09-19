@@ -17,5 +17,6 @@ module NewbornChart
     # the framework and any gems in your application.
     config.assets.initialize_on_precompile = false
     config.active_record.default_timezone = :local
+    config.time_zone = 'Pacific Time (US & Canada)'
   end
 end
