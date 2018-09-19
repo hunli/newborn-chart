@@ -3,8 +3,8 @@
 <div class='center'>
   <% @diaper_changes.each do |d| %>
     <fieldset>
-      <%= d.change_time %>
-      <br>
+      <%= d.created_at.strftime("%a %B %H, %Y") %><br>
+      <%= d.change_time %><br>
       <%= d.diaper_type %>
     </fieldset>
     <br><br>
