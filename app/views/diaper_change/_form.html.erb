@@ -1,8 +1,8 @@
 <div class='center'>
   <%= form_for @diaper_change, url: { action: 'create' } do |f| %>
-    <%= f.label :change_time, 'Diaper Change Time:' %>
+    <%= f.label :time, 'Diaper Change Time:' %>
     <br>
-    <%= telephone_field_tag :change_time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
+    <%= telephone_field_tag :time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
     <%= select_tag :cycle, options_for_select(['AM', 'PM'], 'PM') %>
     <br>
     <%= f.label :diaper_type, 'Type of Diaper Change:' %>

@@ -1,7 +1,7 @@
 <div class='center'>
   <%= form_for @feed, url: { action: 'create' } do |f| %>
-    <%= f.label :feed_time, 'Feed Time:' %>
-    <%= telephone_field_tag :feed_time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
+    <%= f.label :time, 'Feed Time:' %>
+    <%= telephone_field_tag :time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
     <%= select_tag :cycle, options_for_select(['AM', 'PM'], 'PM') %>
     <br>
     <%= f.label :amount, 'Amount:' %>

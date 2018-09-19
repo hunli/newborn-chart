@@ -16,6 +16,6 @@ class DiaperChangeController < BaseController
   private
 
   def retrieve_diaper_change_time
-    params[:change_time] + ' ' + params[:cycle]
+    params[:time] + ' ' + params[:cycle]
   end
 end

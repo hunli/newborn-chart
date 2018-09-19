@@ -15,10 +15,10 @@ class FeedController < BaseController
   private
 
   def feed_params
-    params.require(:feed).permit(:amount, :feed_time)
+    params.require(:feed).permit(:amount)
   end
 
   def retrieve_feed_time
-    params[:feed_time] + ' ' + params[:cycle]
+    params[:time] + ' ' + params[:cycle]
   end
 end
