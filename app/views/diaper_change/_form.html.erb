@@ -2,7 +2,7 @@
   <%= form_for @diaper_change, url: { action: 'create' } do |f| %>
     <%= f.label :time, 'Diaper Change Time:' %>
     <br>
-    <%= telephone_field_tag :time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()' %>
+    <%= telephone_field_tag :time, '', value: get_time, class: 'date_field', oninput: 'TimeInputChange()', required: true %>
     <%= select_tag :cycle, options_for_select(['AM', 'PM'], 'PM') %>
     <br>
     <%= f.label :diaper_type, 'Type of Diaper Change:' %>
