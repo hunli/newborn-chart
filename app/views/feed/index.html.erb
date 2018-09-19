@@ -3,7 +3,7 @@
 <div class='center'>
   <% @feeds.each do |f| %>
     <fieldset>
-      <%= f.created_at.strftime("%a %B %H, %Y") %><br>
+      <%= f.created_at.strftime("%a %B %d, %Y") %><br>
       <%= f.feed_time %><br>
       <%= f.amount %> ounces
     </fieldset>
