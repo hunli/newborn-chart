@@ -4,8 +4,11 @@ module ApplicationHelper
   end
 
   def get_time
-    Time.now.strftime("%H:%M")
-    tfhour = Time.now.hour
+    time = Time.now.strftime("%H:%M")
+    split_time = time.split(':')
+    min = split_time[1]
+    tfhour = split_time[0]
+
     hour = case tfhour.to_i
     when 0
       '12'
@@ -15,7 +18,6 @@ module ApplicationHelper
       "#{tfhour.to_i - 12}"
     end
 
-    min = Time.now.min
     "#{hour}:#{min}"
   end
 
