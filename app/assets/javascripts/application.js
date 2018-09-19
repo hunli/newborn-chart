@@ -16,7 +16,7 @@
 //= require_tree .
 
 function TimeInputChange() {
-  let value = '';
+  var value = '';
   var time = document.getElementById('time').value.replace(':', '');
 
   if (time.length >= 4) {
