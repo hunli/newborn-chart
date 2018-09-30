@@ -8,7 +8,7 @@ class LoginController < ApplicationController
 
     if user.authenticate(password)
       session[:current_user_id] = user.id
-      redirect_to user_index_url
+      redirect_successfully
     else
       flash.now.alert = "Invalid email/password"
       # TODO: Need to check if refreshing the page after rendering causes an error
@@ -24,5 +24,13 @@ class LoginController < ApplicationController
 
   def password
     params[:user][:password]
+  end
+
+  def redirect_successfully
+    if session[:back]
+      redirect_to session[:back]
+    else
+      redirect_to user_index_url
+    end
   end
 end

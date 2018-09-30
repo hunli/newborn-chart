@@ -2,7 +2,10 @@ class BaseController < ApplicationController
   before_action :verify_user_signed_in
 
   def verify_user_signed_in
-    redirect_to login_index_path unless valid_session
+    unless valid_session
+      session[:back] = request.original_url
+      redirect_to login_index_path
+    end
   end
 
   def current_user
