@@ -6,5 +6,7 @@ This app is designed with to be considerate of mobile so that it can be easily a
 
 Site is accessible at https://newborn-chart.herokuapp.com/.
 
+After signing up, by sharing the Account token, new signups will be able to view and modify the same data.
+
 Feel free to contribute!
 
