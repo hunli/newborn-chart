@@ -10,6 +10,7 @@ class SignUpController < ApplicationController
     if @user.save
       flash[:notice] = "User created successfully"
       session[:current_user_id] = @user.id
+      remember @user
       redirect_to user_index_url
     else
       flash.now.alert = "User failed to be created"

@@ -8,6 +8,7 @@ class LoginController < ApplicationController
 
     if user.authenticate(password)
       session[:current_user_id] = user.id
+      remember user
       redirect_successfully
     else
       flash.now.alert = "Invalid email/password"
