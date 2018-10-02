@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_085029) do
+ActiveRecord::Schema.define(version: 2018_10_02_010029) do
 
   create_table "accounts", force: :cascade do |t|
     t.text "token"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_085029) do
     t.integer "account_id"
     t.string "password"
     t.string "password_digest"
+    t.string "remember_digest"
     t.index ["account_id"], name: "index_users_on_account_id"
   end
 
