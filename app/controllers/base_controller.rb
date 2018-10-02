@@ -30,10 +30,12 @@ class BaseController < ApplicationController
       end
     end
 
+    logger.info "Cookies Valid for #{cookies.signed[:user_id]}? #{valid}"
     valid
   end
 
   def log_in(user)
+    logger.info "Logging in user #{user.id}"
     session[:current_user_id] = user.id
     @current_user = user
   end
